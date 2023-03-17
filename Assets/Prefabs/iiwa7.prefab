@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722399515992}
   - component: {fileID: 4308204722399515999}
-  - component: {fileID: 4308204722399515998}
-  m_Layer: 0
+  - component: {fileID: 1459608156}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204722399515998
+--- !u!114 &1459608156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,9 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722399515992}
-  Parent: {fileID: 4308204722891965947}
+  Parent: {fileID: 1984106017}
   Childs:
-  - {fileID: 4308204723233793537}
+  - {fileID: 1489024261}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722540800875
@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 4308204722540800879}
   - component: {fileID: 4308204722540800872}
   - component: {fileID: 4308204722540800873}
-  - component: {fileID: 4308204722540800877}
-  - component: {fileID: 4308204722540800876}
-  m_Layer: 0
+  - component: {fileID: 835424703}
+  - component: {fileID: 835424704}
+  m_Layer: 6
   m_Name: iiwa_link_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,8 +144,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -170
     upperLimit: 170
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   jointName: iiwa_joint_1
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204722540800877
+--- !u!114 &835424703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,14 +219,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722540800874}
-  Parent: {fileID: 4308204722844643613}
+  Parent: {fileID: 1312468142}
   Childs:
-  - {fileID: 4308204722928071330}
-  - {fileID: 4308204722670106547}
-  - {fileID: 4308204722855292883}
-  Joint: {fileID: 4308204722540800876}
+  - {fileID: 340791251}
+  - {fileID: 322764940}
+  - {fileID: 727568667}
+  Joint: {fileID: 835424704}
   Objectives: []
---- !u!114 &4308204722540800876
+--- !u!114 &835424704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,9 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204722540800877}
+  Segment: {fileID: 835424703}
   X:
-    Joint: {fileID: 4308204722540800876}
+    Joint: {fileID: 835424704}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 1, y: 0, z: 0}
   Y:
-    Joint: {fileID: 4308204722540800876}
+    Joint: {fileID: 835424704}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0, y: 0.000000059604645, z: -0.99999994}
   Z:
-    Joint: {fileID: 4308204722540800876}
+    Joint: {fileID: 835424704}
     Enabled: 1
     Constrained: 1
     LowerLimit: -170
@@ -295,8 +295,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722670106541}
   - component: {fileID: 4308204722670106540}
-  - component: {fileID: 4308204722670106547}
-  m_Layer: 0
+  - component: {fileID: 322764940}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722670106547
+--- !u!114 &322764940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,9 +345,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722670106541}
-  Parent: {fileID: 4308204722540800877}
+  Parent: {fileID: 835424703}
   Childs:
-  - {fileID: 4308204723312174231}
+  - {fileID: 1454227004}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722716823686
@@ -360,8 +360,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722716823685}
   - component: {fileID: 4308204722716823684}
-  - component: {fileID: 4308204722716823691}
-  m_Layer: 0
+  - component: {fileID: 1642229588}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204722716823691
+--- !u!114 &1642229588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,9 +411,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722716823685}
-  Parent: {fileID: 4308204723953625136}
+  Parent: {fileID: 608402564}
   Childs:
-  - {fileID: 4308204723507532111}
+  - {fileID: 1396370011}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722739111373
@@ -426,8 +426,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722739111372}
   - component: {fileID: 4308204722739111379}
-  - component: {fileID: 4308204722739111378}
-  m_Layer: 0
+  - component: {fileID: 220438201}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204722739111378
+--- !u!114 &220438201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -477,9 +477,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722739111372}
-  Parent: {fileID: 4308204724249528263}
+  Parent: {fileID: 138422826}
   Childs:
-  - {fileID: 4308204723237036284}
+  - {fileID: 1049003888}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722749718386
@@ -492,8 +492,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722749718385}
   - component: {fileID: 4308204722749718384}
-  - component: {fileID: 4308204722749718391}
-  m_Layer: 0
+  - component: {fileID: 667067678}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722749718391
+--- !u!114 &667067678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722749718385}
-  Parent: {fileID: 4308204722932215654}
+  Parent: {fileID: 1967116291}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -555,8 +555,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722822200020}
   - component: {fileID: 4308204722822200027}
-  - component: {fileID: 4308204722822200026}
-  m_Layer: 0
+  - component: {fileID: 2134409842}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722822200026
+--- !u!114 &2134409842
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -605,9 +605,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722822200020}
-  Parent: {fileID: 4308204723553597009}
+  Parent: {fileID: 1586809418}
   Childs:
-  - {fileID: 4308204724482321271}
+  - {fileID: 1403129299}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722844643604
@@ -623,9 +623,9 @@ GameObject:
   - component: {fileID: 4308204722844643608}
   - component: {fileID: 4308204722844643609}
   - component: {fileID: 4308204722844643614}
-  - component: {fileID: 4308204722844643613}
-  - component: {fileID: 4308204722844643612}
-  m_Layer: 0
+  - component: {fileID: 1312468142}
+  - component: {fileID: 1312468143}
+  m_Layer: 6
   m_Name: iiwa_link_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ MonoBehaviour:
   jointName: 
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204722844643613
+--- !u!114 &1312468142
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -763,14 +763,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722844643611}
-  Parent: {fileID: 4308204722874642383}
+  Parent: {fileID: 1548881513}
   Childs:
-  - {fileID: 4308204724249528263}
-  - {fileID: 4308204724052925208}
-  - {fileID: 4308204722540800877}
-  Joint: {fileID: 4308204722844643612}
+  - {fileID: 138422826}
+  - {fileID: 1257894888}
+  - {fileID: 835424703}
+  Joint: {fileID: 1312468143}
   Objectives: []
---- !u!114 &4308204722844643612
+--- !u!114 &1312468143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -782,9 +782,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204722844643613}
+  Segment: {fileID: 1312468142}
   X:
-    Joint: {fileID: 4308204722844643612}
+    Joint: {fileID: 1312468143}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -796,7 +796,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 1, y: 0, z: 0}
   Y:
-    Joint: {fileID: 4308204722844643612}
+    Joint: {fileID: 1312468143}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0, y: 1, z: 0}
   Z:
-    Joint: {fileID: 4308204722844643612}
+    Joint: {fileID: 1312468143}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -842,9 +842,9 @@ GameObject:
   - component: {fileID: 4308204722855292877}
   - component: {fileID: 4308204722855292878}
   - component: {fileID: 4308204722855292879}
-  - component: {fileID: 4308204722855292883}
-  - component: {fileID: 4308204722855292882}
-  m_Layer: 0
+  - component: {fileID: 727568667}
+  - component: {fileID: 727568668}
+  m_Layer: 6
   m_Name: iiwa_link_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,8 +907,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -120
     upperLimit: 120
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   jointName: iiwa_joint_2
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204722855292883
+--- !u!114 &727568667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -982,14 +982,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722855292872}
-  Parent: {fileID: 4308204722540800877}
+  Parent: {fileID: 835424703}
   Childs:
-  - {fileID: 4308204723788001574}
-  - {fileID: 4308204722886607154}
-  - {fileID: 4308204723553597009}
-  Joint: {fileID: 4308204722855292882}
+  - {fileID: 563297592}
+  - {fileID: 390426448}
+  - {fileID: 1586809418}
+  Joint: {fileID: 727568668}
   Objectives: []
---- !u!114 &4308204722855292882
+--- !u!114 &727568668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1001,9 +1001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204722855292883}
+  Segment: {fileID: 727568667}
   X:
-    Joint: {fileID: 4308204722855292882}
+    Joint: {fileID: 727568668}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0.00000005960464, y: 0, z: 0.99999994}
   Y:
-    Joint: {fileID: 4308204722855292882}
+    Joint: {fileID: 727568668}
     Enabled: 1
     Constrained: 1
     LowerLimit: -120
@@ -1027,11 +1027,11 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: -0.000000119209275, y: 1, z: 0}
   Z:
-    Joint: {fileID: 4308204722855292882}
+    Joint: {fileID: 727568668}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
-    UpperLimit: 120
+    UpperLimit: 0
     TargetValue: 0
     CurrentValue: 0
     CurrentError: 0
@@ -1058,8 +1058,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722863686555}
   - component: {fileID: 4308204722863686554}
-  - component: {fileID: 4308204722863686553}
-  m_Layer: 0
+  - component: {fileID: 853007767}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204722863686553
+--- !u!114 &853007767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1109,9 +1109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722863686555}
-  Parent: {fileID: 4308204724332080294}
+  Parent: {fileID: 1109174434}
   Childs:
-  - {fileID: 4308204723251589309}
+  - {fileID: 740949144}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722874642378
@@ -1125,7 +1125,8 @@ GameObject:
   - component: {fileID: 4308204722874642377}
   - component: {fileID: 4308204722874642376}
   - component: {fileID: 4308204722874642383}
-  m_Layer: 0
+  - component: {fileID: 1548881513}
+  m_Layer: 6
   m_Name: world
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1182,28 @@ MonoBehaviour:
   Childs:
   - {fileID: 4308204723115913348}
   - {fileID: 4308204723019251492}
-  - {fileID: 4308204722844643613}
+  - {fileID: 0}
+  Joint: {fileID: 0}
+  Objectives: []
+--- !u!114 &1548881513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204722874642378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 4308204723184353245}
+  Transform: {fileID: 4308204722874642377}
+  Parent: {fileID: 42445571}
+  Childs:
+  - {fileID: 1430921206}
+  - {fileID: 1150150631}
+  - {fileID: 1312468142}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722886607149
@@ -1194,8 +1216,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722886607148}
   - component: {fileID: 4308204722886607155}
-  - component: {fileID: 4308204722886607154}
-  m_Layer: 0
+  - component: {fileID: 390426448}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1230,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722886607154
+--- !u!114 &390426448
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1244,9 +1266,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722886607148}
-  Parent: {fileID: 4308204722855292883}
+  Parent: {fileID: 727568667}
   Childs:
-  - {fileID: 4308204724062719307}
+  - {fileID: 1878752815}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722891965942
@@ -1259,8 +1281,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722891965941}
   - component: {fileID: 4308204722891965940}
-  - component: {fileID: 4308204722891965947}
-  m_Layer: 0
+  - component: {fileID: 1984106017}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,7 +1317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722891965947
+--- !u!114 &1984106017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1309,9 +1331,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722891965941}
-  Parent: {fileID: 4308204723988331047}
+  Parent: {fileID: 933257668}
   Childs:
-  - {fileID: 4308204722399515998}
+  - {fileID: 1459608156}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722928071325
@@ -1324,8 +1346,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722928071324}
   - component: {fileID: 4308204722928071331}
-  - component: {fileID: 4308204722928071330}
-  m_Layer: 0
+  - component: {fileID: 340791251}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722928071330
+--- !u!114 &340791251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1374,9 +1396,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722928071324}
-  Parent: {fileID: 4308204722540800877}
+  Parent: {fileID: 835424703}
   Childs:
-  - {fileID: 4308204723813139815}
+  - {fileID: 1863478249}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722932215651
@@ -1391,9 +1413,13 @@ GameObject:
   - component: {fileID: 4308204722932215655}
   - component: {fileID: 4308204722932215648}
   - component: {fileID: 4308204722932215649}
-  - component: {fileID: 4308204722932215654}
-  - component: {fileID: 4308204722932215653}
-  m_Layer: 0
+  - component: {fileID: 1967116288}
+  - component: {fileID: 1967116289}
+  - component: {fileID: 1967116290}
+  - component: {fileID: 1967116291}
+  - component: {fileID: 1967116292}
+  - component: {fileID: 1967116293}
+  m_Layer: 6
   m_Name: iiwa_link_ee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,8 +1481,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: 0
     upperLimit: 0
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 3.4028235e+38
     target: 0
     targetVelocity: 0
@@ -1498,7 +1524,7 @@ MonoBehaviour:
   jointName: iiwa_joint_ee
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204722932215654
+--- !u!114 &1967116288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1512,14 +1538,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722932215650}
-  Parent: {fileID: 4308204724097921254}
+  Parent: {fileID: 230662295}
   Childs:
-  - {fileID: 4308204722959650666}
-  - {fileID: 4308204722749718391}
+  - {fileID: 595383051}
+  - {fileID: 667067678}
   Joint: {fileID: 0}
   Objectives:
-  - {fileID: 4308204722932215653}
---- !u!114 &4308204722932215653
+  - {fileID: 1967116290}
+  - {fileID: 1967116289}
+--- !u!114 &1967116289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204722932215651}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1222261562c2b4344aab74254d8cfdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 1967116288}
+  Weight: 0.001
+--- !u!114 &1967116290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1531,12 +1572,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9463c0da940cf43e5aa26edf005dbf39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204722932215654}
+  Segment: {fileID: 1967116288}
   Weight: 1
   Target: {fileID: 0}
-  TPX: 0.2160000056028366
-  TPY: 0.6399999856948853
-  TPZ: -0.15700000524520874
+  TPX: 0.49300000071525574
+  TPY: 0.6520000100135803
+  TPZ: 0.37599998712539673
+  MaximumError: 0.001
+--- !u!114 &1967116291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204722932215651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 4308204723184353245}
+  Transform: {fileID: 4308204722932215650}
+  Parent: {fileID: 230662295}
+  Childs:
+  - {fileID: 595383051}
+  - {fileID: 667067678}
+  Joint: {fileID: 0}
+  Objectives:
+  - {fileID: 1967116293}
+  - {fileID: 1967116292}
+--- !u!114 &1967116292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204722932215651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1222261562c2b4344aab74254d8cfdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 1967116291}
+  Weight: 0.1
+--- !u!114 &1967116293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204722932215651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9463c0da940cf43e5aa26edf005dbf39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 1967116291}
+  Weight: 1
+  Target: {fileID: 0}
+  TPX: -0.07400000095367432
+  TPY: 0.6520000100135803
+  TPZ: 0.3440000116825104
   MaximumError: 0.001
 --- !u!1 &4308204722948703183
 GameObject:
@@ -1548,8 +1644,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722948703182}
   - component: {fileID: 4308204722948703181}
-  - component: {fileID: 4308204722948703180}
-  m_Layer: 0
+  - component: {fileID: 994281161}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204722948703180
+--- !u!114 &994281161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1599,9 +1695,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722948703182}
-  Parent: {fileID: 4308204723190235570}
+  Parent: {fileID: 473731439}
   Childs:
-  - {fileID: 4308204722539602025}
+  - {fileID: 930410240}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204722959650661
@@ -1614,8 +1710,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204722959650660}
   - component: {fileID: 4308204722959650667}
-  - component: {fileID: 4308204722959650666}
-  m_Layer: 0
+  - component: {fileID: 595383051}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204722959650666
+--- !u!114 &595383051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1663,7 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204722959650660}
-  Parent: {fileID: 4308204722932215654}
+  Parent: {fileID: 1967116291}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -1678,7 +1774,8 @@ GameObject:
   - component: {fileID: 4308204723019251494}
   - component: {fileID: 4308204723019251493}
   - component: {fileID: 4308204723019251492}
-  m_Layer: 0
+  - component: {fileID: 1150150631}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,6 +1827,24 @@ MonoBehaviour:
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
+--- !u!114 &1150150631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204723019251495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 4308204723184353245}
+  Transform: {fileID: 4308204723019251494}
+  Parent: {fileID: 1548881513}
+  Childs: []
+  Joint: {fileID: 0}
+  Objectives: []
 --- !u!1 &4308204723050486683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1758,8 +1873,8 @@ GameObject:
   - component: {fileID: 4308204723050486687}
   - component: {fileID: 4308204723050486680}
   - component: {fileID: 4308204723050486681}
-  - component: {fileID: 4308204723050486702}
-  m_Layer: 0
+  - component: {fileID: 1192679146}
+  m_Layer: 6
   m_Name: Plugins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2066,7 +2181,7 @@ MonoBehaviour:
     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>\r\n 
     </joint>\r\n  <actuator name=\"iiwa_motor_7\">\r\n    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>\r\n   
     <mechanicalReduction>1</mechanicalReduction>\r\n  </actuator>\r\n</transmission>"
---- !u!114 &4308204723050486702
+--- !u!114 &1192679146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2080,7 +2195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723050486682}
-  Parent: {fileID: 4308204723184353246}
+  Parent: {fileID: 42445571}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -2094,8 +2209,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723076745033}
   - component: {fileID: 4308204723076745032}
-  - component: {fileID: 4308204723076745039}
-  m_Layer: 0
+  - component: {fileID: 1171881227}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2130,7 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204723076745039
+--- !u!114 &1171881227
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2144,9 +2259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723076745033}
-  Parent: {fileID: 4308204724153956770}
+  Parent: {fileID: 1879708368}
   Childs:
-  - {fileID: 4308204723139570717}
+  - {fileID: 1605895252}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723115913351
@@ -2160,7 +2275,8 @@ GameObject:
   - component: {fileID: 4308204723115913350}
   - component: {fileID: 4308204723115913349}
   - component: {fileID: 4308204723115913348}
-  m_Layer: 0
+  - component: {fileID: 1430921206}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2212,6 +2328,24 @@ MonoBehaviour:
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
+--- !u!114 &1430921206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204723115913351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 4308204723184353245}
+  Transform: {fileID: 4308204723115913350}
+  Parent: {fileID: 1548881513}
+  Childs: []
+  Joint: {fileID: 0}
+  Objectives: []
 --- !u!1 &4308204723139570712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,8 +2356,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723139570719}
   - component: {fileID: 4308204723139570718}
-  - component: {fileID: 4308204723139570717}
-  m_Layer: 0
+  - component: {fileID: 1605895252}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723139570717
+--- !u!114 &1605895252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2273,9 +2407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723139570719}
-  Parent: {fileID: 4308204723076745039}
+  Parent: {fileID: 1171881227}
   Childs:
-  - {fileID: 4308204722413273893}
+  - {fileID: 491083683}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723171974847
@@ -2288,8 +2422,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723171974846}
   - component: {fileID: 4308204723171974845}
-  - component: {fileID: 4308204723171974844}
-  m_Layer: 0
+  - component: {fileID: 754373053}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2324,7 +2458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204723171974844
+--- !u!114 &754373053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2338,9 +2472,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723171974846}
-  Parent: {fileID: 4308204724153956770}
+  Parent: {fileID: 1879708368}
   Childs:
-  - {fileID: 4308204723206765230}
+  - {fileID: 1417856939}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723184353242
@@ -2354,10 +2488,10 @@ GameObject:
   - component: {fileID: 4308204723184353247}
   - component: {fileID: 4308204723184353240}
   - component: {fileID: 4308204723184353241}
-  - component: {fileID: 4308204723184353244}
   - component: {fileID: 4308204723184353245}
   - component: {fileID: 4308204723184353246}
-  m_Layer: 0
+  - component: {fileID: 42445571}
+  m_Layer: 6
   m_Name: iiwa7
   m_TagString: robot
   m_Icon: {fileID: 0}
@@ -2404,7 +2538,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4308204723184353242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d607ea46a579d44c4b19a6322ce4b9b2, type: 3}
   m_Name: 
@@ -2419,38 +2553,6 @@ MonoBehaviour:
   torque: 100
   acceleration: 10
   highLightColor: {r: 1, g: 0.92988515, b: 0, a: 1}
---- !u!114 &4308204723184353244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4308204723184353242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c090eaaa853542969cc52590a778d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jointChain: []
-  currentAngles: []
-  endEffectorRotation: {x: 0, y: 0, z: 0, w: 0}
-  endEffectorPosition:
-    e00: 0
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 0
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 0
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 0
 --- !u!114 &4308204723184353245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2467,97 +2569,97 @@ MonoBehaviour:
   Generations: 2
   PopulationSize: 50
   Elites: 2
-  Smoothing: 0.5
+  Smoothing: 0.926
   AnimationWeight: 0
   AnimationBlend: 0
   MotionType: 0
   MaximumVelocity: 3
   MaximumAcceleration: 3
   Segments:
-  - {fileID: 4308204723184353246}
-  - {fileID: 4308204723050486702}
-  - {fileID: 4308204722874642383}
-  - {fileID: 4308204723115913348}
-  - {fileID: 4308204723019251492}
-  - {fileID: 4308204722844643613}
-  - {fileID: 4308204724249528263}
-  - {fileID: 4308204722739111378}
-  - {fileID: 4308204723237036284}
-  - {fileID: 4308204723052048283}
-  - {fileID: 4308204724052925208}
-  - {fileID: 4308204724028302764}
-  - {fileID: 4308204722917103817}
-  - {fileID: 4308204722626331398}
-  - {fileID: 4308204722540800877}
-  - {fileID: 4308204722928071330}
-  - {fileID: 4308204723813139815}
-  - {fileID: 4308204723259036657}
-  - {fileID: 4308204724313533713}
-  - {fileID: 4308204722670106547}
-  - {fileID: 4308204723312174231}
-  - {fileID: 4308204722804666950}
-  - {fileID: 4308204722588264386}
-  - {fileID: 4308204722855292883}
-  - {fileID: 4308204723788001574}
-  - {fileID: 4308204724182229872}
-  - {fileID: 4308204724508175990}
-  - {fileID: 4308204723645008552}
-  - {fileID: 4308204722886607154}
-  - {fileID: 4308204724062719307}
-  - {fileID: 4308204722390797756}
-  - {fileID: 4308204723378858473}
-  - {fileID: 4308204723553597009}
-  - {fileID: 4308204722822200026}
-  - {fileID: 4308204724482321271}
-  - {fileID: 4308204723940450325}
-  - {fileID: 4308204722943827419}
-  - {fileID: 4308204724135680716}
-  - {fileID: 4308204724384879193}
-  - {fileID: 4308204723837681878}
-  - {fileID: 4308204722585403674}
-  - {fileID: 4308204723988331047}
-  - {fileID: 4308204724162437240}
-  - {fileID: 4308204723637780354}
-  - {fileID: 4308204722973371127}
-  - {fileID: 4308204723093228611}
-  - {fileID: 4308204722891965947}
-  - {fileID: 4308204722399515998}
-  - {fileID: 4308204723233793537}
-  - {fileID: 4308204722684240604}
-  - {fileID: 4308204724153956770}
-  - {fileID: 4308204723076745039}
-  - {fileID: 4308204723139570717}
-  - {fileID: 4308204722413273893}
-  - {fileID: 4308204722979426460}
-  - {fileID: 4308204723171974844}
-  - {fileID: 4308204723206765230}
-  - {fileID: 4308204724461409613}
-  - {fileID: 4308204723787124839}
-  - {fileID: 4308204723989232600}
-  - {fileID: 4308204723190235570}
-  - {fileID: 4308204722948703180}
-  - {fileID: 4308204722539602025}
-  - {fileID: 4308204722367480213}
-  - {fileID: 4308204724332080294}
-  - {fileID: 4308204722863686553}
-  - {fileID: 4308204723251589309}
-  - {fileID: 4308204724391532283}
-  - {fileID: 4308204724097921254}
-  - {fileID: 4308204724277904113}
-  - {fileID: 4308204723725827463}
-  - {fileID: 4308204724385553140}
-  - {fileID: 4308204722602816818}
-  - {fileID: 4308204723953625136}
-  - {fileID: 4308204722716823691}
-  - {fileID: 4308204723507532111}
-  - {fileID: 4308204723369432212}
-  - {fileID: 4308204722932215654}
-  - {fileID: 4308204722959650666}
-  - {fileID: 4308204722749718391}
-  Root: {fileID: 4308204723184353246}
+  - {fileID: 1192679146}
+  - {fileID: 1312468142}
+  - {fileID: 138422826}
+  - {fileID: 220438201}
+  - {fileID: 1049003888}
+  - {fileID: 1268884408}
+  - {fileID: 1257894888}
+  - {fileID: 668108932}
+  - {fileID: 870893384}
+  - {fileID: 1339674653}
+  - {fileID: 835424703}
+  - {fileID: 340791251}
+  - {fileID: 1863478249}
+  - {fileID: 1425359680}
+  - {fileID: 1085059653}
+  - {fileID: 322764940}
+  - {fileID: 1454227004}
+  - {fileID: 1861174351}
+  - {fileID: 1939081938}
+  - {fileID: 727568667}
+  - {fileID: 563297592}
+  - {fileID: 495984329}
+  - {fileID: 690894832}
+  - {fileID: 547703859}
+  - {fileID: 390426448}
+  - {fileID: 1878752815}
+  - {fileID: 1424731437}
+  - {fileID: 392435329}
+  - {fileID: 1586809418}
+  - {fileID: 2134409842}
+  - {fileID: 1403129299}
+  - {fileID: 38366741}
+  - {fileID: 1260212758}
+  - {fileID: 1076724586}
+  - {fileID: 1949606369}
+  - {fileID: 920647771}
+  - {fileID: 1957687941}
+  - {fileID: 933257668}
+  - {fileID: 119055932}
+  - {fileID: 1774546687}
+  - {fileID: 1103118724}
+  - {fileID: 477466541}
+  - {fileID: 1984106017}
+  - {fileID: 1459608156}
+  - {fileID: 1489024261}
+  - {fileID: 1195750211}
+  - {fileID: 1879708368}
+  - {fileID: 1171881227}
+  - {fileID: 1605895252}
+  - {fileID: 491083683}
+  - {fileID: 1554856299}
+  - {fileID: 754373053}
+  - {fileID: 1417856939}
+  - {fileID: 743292047}
+  - {fileID: 194999961}
+  - {fileID: 462184486}
+  - {fileID: 473731439}
+  - {fileID: 994281161}
+  - {fileID: 930410240}
+  - {fileID: 1423601067}
+  - {fileID: 1109174434}
+  - {fileID: 853007767}
+  - {fileID: 740949144}
+  - {fileID: 1266398588}
+  - {fileID: 230662295}
+  - {fileID: 763788491}
+  - {fileID: 312386924}
+  - {fileID: 1626656460}
+  - {fileID: 1687719980}
+  - {fileID: 608402564}
+  - {fileID: 1642229588}
+  - {fileID: 1396370011}
+  - {fileID: 1262582600}
+  - {fileID: 595383051}
+  - {fileID: 667067678}
+  - {fileID: 42445571}
+  - {fileID: 1548881513}
+  - {fileID: 1430921206}
+  - {fileID: 1150150631}
+  - {fileID: 1967116291}
+  Root: {fileID: 42445571}
   Solution: []
-  SelectedSegment: {fileID: 4308204723988331047}
-  Scroll: {x: 0, y: 1560}
+  SelectedSegment: {fileID: 1967116291}
+  Scroll: {x: 0, y: 2300}
 --- !u!114 &4308204723184353246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2574,8 +2676,28 @@ MonoBehaviour:
   Transform: {fileID: 4308204723184353247}
   Parent: {fileID: 0}
   Childs:
-  - {fileID: 4308204723050486702}
+  - {fileID: 0}
   - {fileID: 4308204722874642383}
+  Joint: {fileID: 0}
+  Objectives: []
+--- !u!114 &42445571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308204723184353242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc329982edfc412a8a508a8e175eef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 4308204723184353245}
+  Transform: {fileID: 4308204723184353247}
+  Parent: {fileID: 0}
+  Childs:
+  - {fileID: 1192679146}
+  - {fileID: 1548881513}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723190235565
@@ -2588,8 +2710,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723190235564}
   - component: {fileID: 4308204723190235571}
-  - component: {fileID: 4308204723190235570}
-  m_Layer: 0
+  - component: {fileID: 473731439}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2624,7 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204723190235570
+--- !u!114 &473731439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2638,9 +2760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723190235564}
-  Parent: {fileID: 4308204723989232600}
+  Parent: {fileID: 462184486}
   Childs:
-  - {fileID: 4308204722948703180}
+  - {fileID: 994281161}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723206765225
@@ -2653,8 +2775,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723206765224}
   - component: {fileID: 4308204723206765231}
-  - component: {fileID: 4308204723206765230}
-  m_Layer: 0
+  - component: {fileID: 1417856939}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,7 +2812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723206765230
+--- !u!114 &1417856939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2704,9 +2826,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723206765224}
-  Parent: {fileID: 4308204723171974844}
+  Parent: {fileID: 754373053}
   Childs:
-  - {fileID: 4308204724461409613}
+  - {fileID: 743292047}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723312174226
@@ -2719,8 +2841,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723312174225}
   - component: {fileID: 4308204723312174224}
-  - component: {fileID: 4308204723312174231}
-  m_Layer: 0
+  - component: {fileID: 1454227004}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723312174231
+--- !u!114 &1454227004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2770,9 +2892,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723312174225}
-  Parent: {fileID: 4308204722670106547}
+  Parent: {fileID: 322764940}
   Childs:
-  - {fileID: 4308204722804666950}
+  - {fileID: 1861174351}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723553597007
@@ -2788,9 +2910,9 @@ GameObject:
   - component: {fileID: 4308204723553597011}
   - component: {fileID: 4308204723553597004}
   - component: {fileID: 4308204723553597005}
-  - component: {fileID: 4308204723553597009}
-  - component: {fileID: 4308204723553597008}
-  m_Layer: 0
+  - component: {fileID: 1586809418}
+  - component: {fileID: 1586809419}
+  m_Layer: 6
   m_Name: iiwa_link_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2853,8 +2975,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -170
     upperLimit: 170
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -2914,7 +3036,7 @@ MonoBehaviour:
   jointName: iiwa_joint_3
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204723553597009
+--- !u!114 &1586809418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2928,14 +3050,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723553597006}
-  Parent: {fileID: 4308204722855292883}
+  Parent: {fileID: 727568667}
   Childs:
-  - {fileID: 4308204722822200026}
-  - {fileID: 4308204724135680716}
-  - {fileID: 4308204723988331047}
-  Joint: {fileID: 4308204723553597008}
+  - {fileID: 2134409842}
+  - {fileID: 1076724586}
+  - {fileID: 933257668}
+  Joint: {fileID: 1586809419}
   Objectives: []
---- !u!114 &4308204723553597008
+--- !u!114 &1586809419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2947,9 +3069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204723553597009}
+  Segment: {fileID: 1586809418}
   X:
-    Joint: {fileID: 4308204723553597008}
+    Joint: {fileID: 1586809419}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -2959,9 +3081,9 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: 1, y: 0, z: -0.0000008060818}
+    Axis: {x: 1, y: 0, z: -0.00000080608163}
   Y:
-    Joint: {fileID: 4308204723553597008}
+    Joint: {fileID: 1586809419}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -2971,9 +3093,9 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: -0.0000008060818, y: 0.00000005960448, z: -0.99999994}
+    Axis: {x: -0.0000008060816, y: 0.0003452897, z: -0.99999994}
   Z:
-    Joint: {fileID: 4308204723553597008}
+    Joint: {fileID: 1586809419}
     Enabled: 1
     Constrained: 1
     LowerLimit: -170
@@ -2983,10 +3105,10 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: 0, y: 0.99999994, z: 0.00000005960448}
+    Axis: {x: 2.7830538e-10, y: 0.99999994, z: 0.0003452897}
   JointType: 0
   Anchor: {x: 0, y: 0, z: 0}
-  Orientation: {x: 270, y: 0.000046185087, z: 0}
+  Orientation: {x: 270.01978, y: 0.000046185076, z: 0}
   DPX: -0.21000004
   DPY: -0.000000059604645
   DPZ: 2.6054022e-15
@@ -3004,8 +3126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723637780476}
   - component: {fileID: 4308204723637780355}
-  - component: {fileID: 4308204723637780354}
-  m_Layer: 0
+  - component: {fileID: 1774546687}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3041,7 +3163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723637780354
+--- !u!114 &1774546687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3055,9 +3177,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723637780476}
-  Parent: {fileID: 4308204724162437240}
+  Parent: {fileID: 119055932}
   Childs:
-  - {fileID: 4308204722973371127}
+  - {fileID: 1103118724}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723725827458
@@ -3070,8 +3192,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723725827457}
   - component: {fileID: 4308204723725827456}
-  - component: {fileID: 4308204723725827463}
-  m_Layer: 0
+  - component: {fileID: 312386924}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3107,7 +3229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723725827463
+--- !u!114 &312386924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3121,9 +3243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723725827457}
-  Parent: {fileID: 4308204724277904113}
+  Parent: {fileID: 763788491}
   Childs:
-  - {fileID: 4308204724385553140}
+  - {fileID: 1626656460}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723788001569
@@ -3136,8 +3258,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723788001568}
   - component: {fileID: 4308204723788001575}
-  - component: {fileID: 4308204723788001574}
-  m_Layer: 0
+  - component: {fileID: 563297592}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3172,7 +3294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204723788001574
+--- !u!114 &563297592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3186,9 +3308,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723788001568}
-  Parent: {fileID: 4308204722855292883}
+  Parent: {fileID: 727568667}
   Childs:
-  - {fileID: 4308204724182229872}
+  - {fileID: 495984329}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723813139810
@@ -3201,8 +3323,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723813139809}
   - component: {fileID: 4308204723813139808}
-  - component: {fileID: 4308204723813139815}
-  m_Layer: 0
+  - component: {fileID: 1863478249}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3238,7 +3360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204723813139815
+--- !u!114 &1863478249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3252,9 +3374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723813139809}
-  Parent: {fileID: 4308204722928071330}
+  Parent: {fileID: 340791251}
   Childs:
-  - {fileID: 4308204723259036657}
+  - {fileID: 1425359680}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723953625139
@@ -3267,8 +3389,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204723953625138}
   - component: {fileID: 4308204723953625137}
-  - component: {fileID: 4308204723953625136}
-  m_Layer: 0
+  - component: {fileID: 608402564}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3303,7 +3425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204723953625136
+--- !u!114 &608402564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3317,9 +3439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723953625138}
-  Parent: {fileID: 4308204724097921254}
+  Parent: {fileID: 230662295}
   Childs:
-  - {fileID: 4308204722716823691}
+  - {fileID: 1642229588}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204723988331037
@@ -3335,9 +3457,9 @@ GameObject:
   - component: {fileID: 4308204723988331041}
   - component: {fileID: 4308204723988331042}
   - component: {fileID: 4308204723988331043}
-  - component: {fileID: 4308204723988331047}
-  - component: {fileID: 4308204723988331046}
-  m_Layer: 0
+  - component: {fileID: 933257668}
+  - component: {fileID: 933257669}
+  m_Layer: 6
   m_Name: iiwa_link_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3400,8 +3522,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -120
     upperLimit: 120
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -3461,7 +3583,7 @@ MonoBehaviour:
   jointName: iiwa_joint_4
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204723988331047
+--- !u!114 &933257668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3475,14 +3597,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723988331036}
-  Parent: {fileID: 4308204723553597009}
+  Parent: {fileID: 1586809418}
   Childs:
-  - {fileID: 4308204724162437240}
-  - {fileID: 4308204722891965947}
-  - {fileID: 4308204724153956770}
-  Joint: {fileID: 4308204723988331046}
+  - {fileID: 119055932}
+  - {fileID: 1984106017}
+  - {fileID: 1879708368}
+  Joint: {fileID: 933257669}
   Objectives: []
---- !u!114 &4308204723988331046
+--- !u!114 &933257669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3494,9 +3616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204723988331047}
+  Segment: {fileID: 933257668}
   X:
-    Joint: {fileID: 4308204723988331046}
+    Joint: {fileID: 933257669}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -3508,7 +3630,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0.00000005960432, y: 0, z: 0.99999994}
   Y:
-    Joint: {fileID: 4308204723988331046}
+    Joint: {fileID: 933257669}
     Enabled: 1
     Constrained: 1
     LowerLimit: -120
@@ -3520,11 +3642,11 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0.0000011356241, y: 1, z: 0}
   Z:
-    Joint: {fileID: 4308204723988331046}
+    Joint: {fileID: 933257669}
     Enabled: 0
     Constrained: 1
-    LowerLimit: -120
-    UpperLimit: 120
+    LowerLimit: 0
+    UpperLimit: 0
     TargetValue: 0
     CurrentValue: 0
     CurrentError: 0
@@ -3554,9 +3676,9 @@ GameObject:
   - component: {fileID: 4308204723989232602}
   - component: {fileID: 4308204723989232603}
   - component: {fileID: 4308204723989232596}
-  - component: {fileID: 4308204723989232600}
-  - component: {fileID: 4308204723989232607}
-  m_Layer: 0
+  - component: {fileID: 462184486}
+  - component: {fileID: 462184487}
+  m_Layer: 6
   m_Name: iiwa_link_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3619,8 +3741,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -120
     upperLimit: 120
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -3680,7 +3802,7 @@ MonoBehaviour:
   jointName: iiwa_joint_6
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204723989232600
+--- !u!114 &462184486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3694,14 +3816,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204723989232597}
-  Parent: {fileID: 4308204724153956770}
+  Parent: {fileID: 1879708368}
   Childs:
-  - {fileID: 4308204723190235570}
-  - {fileID: 4308204724332080294}
-  - {fileID: 4308204724097921254}
-  Joint: {fileID: 4308204723989232607}
+  - {fileID: 473731439}
+  - {fileID: 1109174434}
+  - {fileID: 230662295}
+  Joint: {fileID: 462184487}
   Objectives: []
---- !u!114 &4308204723989232607
+--- !u!114 &462184487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3713,9 +3835,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204723989232600}
+  Segment: {fileID: 462184486}
   X:
-    Joint: {fileID: 4308204723989232607}
+    Joint: {fileID: 462184487}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -3727,7 +3849,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0.000000059604645, y: 0, z: 0.99999994}
   Y:
-    Joint: {fileID: 4308204723989232607}
+    Joint: {fileID: 462184487}
     Enabled: 1
     Constrained: 1
     LowerLimit: -120
@@ -3739,11 +3861,11 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0, y: 1, z: 0}
   Z:
-    Joint: {fileID: 4308204723989232607}
+    Joint: {fileID: 462184487}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
-    UpperLimit: 120
+    UpperLimit: 0
     TargetValue: 0
     CurrentValue: 0
     CurrentError: 0
@@ -3770,8 +3892,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724028302766}
   - component: {fileID: 4308204724028302765}
-  - component: {fileID: 4308204724028302764}
-  m_Layer: 0
+  - component: {fileID: 668108932}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3807,7 +3929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204724028302764
+--- !u!114 &668108932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3821,9 +3943,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724028302766}
-  Parent: {fileID: 4308204724052925208}
+  Parent: {fileID: 1257894888}
   Childs:
-  - {fileID: 4308204722917103817}
+  - {fileID: 870893384}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724052925211
@@ -3836,8 +3958,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724052925210}
   - component: {fileID: 4308204724052925209}
-  - component: {fileID: 4308204724052925208}
-  m_Layer: 0
+  - component: {fileID: 1257894888}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3872,7 +3994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724052925208
+--- !u!114 &1257894888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3886,9 +4008,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724052925210}
-  Parent: {fileID: 4308204722844643613}
+  Parent: {fileID: 1312468142}
   Childs:
-  - {fileID: 4308204724028302764}
+  - {fileID: 668108932}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724062719302
@@ -3901,8 +4023,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724062719301}
   - component: {fileID: 4308204724062719300}
-  - component: {fileID: 4308204724062719307}
-  m_Layer: 0
+  - component: {fileID: 1878752815}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3938,7 +4060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204724062719307
+--- !u!114 &1878752815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3952,9 +4074,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724062719301}
-  Parent: {fileID: 4308204722886607154}
+  Parent: {fileID: 390426448}
   Childs:
-  - {fileID: 4308204722390797756}
+  - {fileID: 1424731437}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724097921244
@@ -3970,9 +4092,9 @@ GameObject:
   - component: {fileID: 4308204724097921248}
   - component: {fileID: 4308204724097921249}
   - component: {fileID: 4308204724097921250}
-  - component: {fileID: 4308204724097921254}
-  - component: {fileID: 4308204724097921253}
-  m_Layer: 0
+  - component: {fileID: 230662295}
+  - component: {fileID: 230662296}
+  m_Layer: 6
   m_Name: iiwa_link_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4035,8 +4157,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -175
     upperLimit: 175
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -4096,7 +4218,7 @@ MonoBehaviour:
   jointName: iiwa_joint_7
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204724097921254
+--- !u!114 &230662295
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4110,14 +4232,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724097921251}
-  Parent: {fileID: 4308204723989232600}
+  Parent: {fileID: 462184486}
   Childs:
-  - {fileID: 4308204724277904113}
-  - {fileID: 4308204723953625136}
-  - {fileID: 4308204722932215654}
-  Joint: {fileID: 4308204724097921253}
+  - {fileID: 763788491}
+  - {fileID: 608402564}
+  - {fileID: 1967116291}
+  Joint: {fileID: 230662296}
   Objectives: []
---- !u!114 &4308204724097921253
+--- !u!114 &230662296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4129,9 +4251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204724097921254}
+  Segment: {fileID: 230662295}
   X:
-    Joint: {fileID: 4308204724097921253}
+    Joint: {fileID: 230662296}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -4143,7 +4265,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 1, y: 0, z: 0}
   Y:
-    Joint: {fileID: 4308204724097921253}
+    Joint: {fileID: 230662296}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -4155,7 +4277,7 @@ MonoBehaviour:
     CurrentAcceleration: 0
     Axis: {x: 0, y: 0.000000059604645, z: -0.99999994}
   Z:
-    Joint: {fileID: 4308204724097921253}
+    Joint: {fileID: 230662296}
     Enabled: 1
     Constrained: 1
     LowerLimit: -175
@@ -4186,8 +4308,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724135680718}
   - component: {fileID: 4308204724135680717}
-  - component: {fileID: 4308204724135680716}
-  m_Layer: 0
+  - component: {fileID: 1076724586}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4222,7 +4344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724135680716
+--- !u!114 &1076724586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4236,9 +4358,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724135680718}
-  Parent: {fileID: 4308204723553597009}
+  Parent: {fileID: 1586809418}
   Childs:
-  - {fileID: 4308204724384879193}
+  - {fileID: 1949606369}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724153956760
@@ -4254,9 +4376,9 @@ GameObject:
   - component: {fileID: 4308204724153956764}
   - component: {fileID: 4308204724153956765}
   - component: {fileID: 4308204724153956766}
-  - component: {fileID: 4308204724153956770}
-  - component: {fileID: 4308204724153956769}
-  m_Layer: 0
+  - component: {fileID: 1879708368}
+  - component: {fileID: 1879708369}
+  m_Layer: 6
   m_Name: iiwa_link_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4319,8 +4441,8 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -170
     upperLimit: 170
-    stiffness: 0
-    damping: 0
+    stiffness: 10000
+    damping: 100
     forceLimit: 300
     target: 0
     targetVelocity: 0
@@ -4380,7 +4502,7 @@ MonoBehaviour:
   jointName: iiwa_joint_5
   EffortLimit: 1000
   VelocityLimit: 1000
---- !u!114 &4308204724153956770
+--- !u!114 &1879708368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4394,14 +4516,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724153956767}
-  Parent: {fileID: 4308204723988331047}
+  Parent: {fileID: 933257668}
   Childs:
-  - {fileID: 4308204723076745039}
-  - {fileID: 4308204723171974844}
-  - {fileID: 4308204723989232600}
-  Joint: {fileID: 4308204724153956769}
+  - {fileID: 1171881227}
+  - {fileID: 754373053}
+  - {fileID: 462184486}
+  Joint: {fileID: 1879708369}
   Objectives: []
---- !u!114 &4308204724153956769
+--- !u!114 &1879708369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4413,9 +4535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Segment: {fileID: 4308204724153956770}
+  Segment: {fileID: 1879708368}
   X:
-    Joint: {fileID: 4308204724153956769}
+    Joint: {fileID: 1879708369}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -4425,9 +4547,9 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: 1, y: 0, z: 0}
+    Axis: {x: 1, y: 2.2737368e-13, z: 0.0000040190425}
   Y:
-    Joint: {fileID: 4308204724153956769}
+    Joint: {fileID: 1879708369}
     Enabled: 0
     Constrained: 1
     LowerLimit: 0
@@ -4437,9 +4559,9 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: 0, y: 0.000000059604645, z: -0.99999994}
+    Axis: {x: 0.0000040190425, y: 0.0003452897, z: -0.99999994}
   Z:
-    Joint: {fileID: 4308204724153956769}
+    Joint: {fileID: 1879708369}
     Enabled: 1
     Constrained: 1
     LowerLimit: -170
@@ -4449,10 +4571,10 @@ MonoBehaviour:
     CurrentError: 0
     CurrentVelocity: 0
     CurrentAcceleration: 0
-    Axis: {x: 0, y: 0.99999994, z: 0.000000059604645}
+    Axis: {x: -0.0000000013878889, y: 0.99999994, z: 0.0003452897}
   JointType: 0
   Anchor: {x: 0, y: 0, z: 0}
-  Orientation: {x: 270, y: 0, z: 0}
+  Orientation: {x: 270.01978, y: -0.00023027418, z: 0}
   DPX: -0.21000062
   DPY: 0.00000044703484
   DPZ: -1.7763577e-14
@@ -4470,8 +4592,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724162437242}
   - component: {fileID: 4308204724162437241}
-  - component: {fileID: 4308204724162437240}
-  m_Layer: 0
+  - component: {fileID: 119055932}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4506,7 +4628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724162437240
+--- !u!114 &119055932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4520,9 +4642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724162437242}
-  Parent: {fileID: 4308204723988331047}
+  Parent: {fileID: 933257668}
   Childs:
-  - {fileID: 4308204723637780354}
+  - {fileID: 1774546687}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724182229875
@@ -4535,8 +4657,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724182229874}
   - component: {fileID: 4308204724182229873}
-  - component: {fileID: 4308204724182229872}
-  m_Layer: 0
+  - component: {fileID: 495984329}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4572,7 +4694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204724182229872
+--- !u!114 &495984329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4586,9 +4708,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724182229874}
-  Parent: {fileID: 4308204723788001574}
+  Parent: {fileID: 563297592}
   Childs:
-  - {fileID: 4308204724508175990}
+  - {fileID: 690894832}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724249528258
@@ -4601,8 +4723,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724249528257}
   - component: {fileID: 4308204724249528256}
-  - component: {fileID: 4308204724249528263}
-  m_Layer: 0
+  - component: {fileID: 138422826}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4637,7 +4759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724249528263
+--- !u!114 &138422826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4651,9 +4773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724249528257}
-  Parent: {fileID: 4308204722844643613}
+  Parent: {fileID: 1312468142}
   Childs:
-  - {fileID: 4308204722739111378}
+  - {fileID: 220438201}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724277904108
@@ -4666,8 +4788,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724277904115}
   - component: {fileID: 4308204724277904114}
-  - component: {fileID: 4308204724277904113}
-  m_Layer: 0
+  - component: {fileID: 763788491}
+  m_Layer: 6
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4702,7 +4824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46398bc5d6905ad429a6d2d973afe002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724277904113
+--- !u!114 &763788491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4716,9 +4838,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724277904115}
-  Parent: {fileID: 4308204724097921254}
+  Parent: {fileID: 230662295}
   Childs:
-  - {fileID: 4308204723725827463}
+  - {fileID: 312386924}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724332080289
@@ -4731,8 +4853,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724332080288}
   - component: {fileID: 4308204724332080295}
-  - component: {fileID: 4308204724332080294}
-  m_Layer: 0
+  - component: {fileID: 1109174434}
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4767,7 +4889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9090ae501ff9cd459bec5271d40249c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4308204724332080294
+--- !u!114 &1109174434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4781,9 +4903,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724332080288}
-  Parent: {fileID: 4308204723989232600}
+  Parent: {fileID: 462184486}
   Childs:
-  - {fileID: 4308204722863686553}
+  - {fileID: 853007767}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724384879188
@@ -4796,8 +4918,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724384879195}
   - component: {fileID: 4308204724384879194}
-  - component: {fileID: 4308204724384879193}
-  m_Layer: 0
+  - component: {fileID: 1949606369}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4833,7 +4955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204724384879193
+--- !u!114 &1949606369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4847,9 +4969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724384879195}
-  Parent: {fileID: 4308204724135680716}
+  Parent: {fileID: 1076724586}
   Childs:
-  - {fileID: 4308204723837681878}
+  - {fileID: 920647771}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4308204724482321266
@@ -4862,8 +4984,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4308204724482321265}
   - component: {fileID: 4308204724482321264}
-  - component: {fileID: 4308204724482321271}
-  m_Layer: 0
+  - component: {fileID: 1403129299}
+  m_Layer: 6
   m_Name: unnamed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +5021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
---- !u!114 &4308204724482321271
+--- !u!114 &1403129299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4913,9 +5035,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 4308204724482321265}
-  Parent: {fileID: 4308204722822200026}
+  Parent: {fileID: 2134409842}
   Childs:
-  - {fileID: 4308204723940450325}
+  - {fileID: 38366741}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1001 &4308204722531505404
@@ -4973,6 +5095,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_5
       objectReference: {fileID: 0}
+    - target: {fileID: 3747254627299647237, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253873433018512994, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5287994497278581917, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -4984,7 +5114,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3747254627299647237, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
   m_PrefabInstance: {fileID: 4308204722531505404}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204724461409613
+--- !u!114 &743292047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4998,9 +5128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 3343432879913653376}
-  Parent: {fileID: 4308204723206765230}
+  Parent: {fileID: 1417856939}
   Childs:
-  - {fileID: 4308204723787124839}
+  - {fileID: 194999961}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &3343432879913653376 stripped
@@ -5018,7 +5148,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5253873433018512994, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
   m_PrefabInstance: {fileID: 4308204722531505404}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723787124839
+--- !u!114 &194999961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5032,7 +5162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 5149963110555748929}
-  Parent: {fileID: 4308204724461409613}
+  Parent: {fileID: 743292047}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5046,6 +5176,10 @@ PrefabInstance:
     - target: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
       propertyPath: m_Name
       value: link_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5480449913427140720, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
       propertyPath: m_RootOrder
@@ -5091,6 +5225,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7888892355814323782, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2606034321580496469, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
     - {fileID: 2031451061380203900, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
@@ -5100,7 +5238,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
   m_PrefabInstance: {fileID: 4308204722555197558}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722539602025
+--- !u!114 &930410240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5114,9 +5252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8631053536504133638}
-  Parent: {fileID: 4308204722948703180}
+  Parent: {fileID: 994281161}
   Childs:
-  - {fileID: 4308204722367480213}
+  - {fileID: 1423601067}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &6247381717234708016 stripped
@@ -5138,7 +5276,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: fba18cb446bd0604396b1896fa2ef07a, type: 2}
---- !u!114 &4308204722367480213
+--- !u!114 &1423601067
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5152,7 +5290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8044077078018988046}
-  Parent: {fileID: 4308204722539602025}
+  Parent: {fileID: 930410240}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5221,10 +5359,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_7
       objectReference: {fileID: 0}
+    - target: {fileID: 6670376934349001261, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8041891185644923788, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e8a22af4a828daf4ea375ee9d48dda3d, type: 2}
+    - target: {fileID: 9009197708710115746, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
 --- !u!4 &827939944729250325 stripped
@@ -5237,7 +5383,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9009197708710115746, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
   m_PrefabInstance: {fileID: 4308204722675235867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723369432212
+--- !u!114 &1262582600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5251,7 +5397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8969152571666006341}
-  Parent: {fileID: 4308204723507532111}
+  Parent: {fileID: 1396370011}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5260,7 +5406,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6670376934349001261, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
   m_PrefabInstance: {fileID: 4308204722675235867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723507532111
+--- !u!114 &1396370011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5274,9 +5420,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 827939944729250325}
-  Parent: {fileID: 4308204722716823691}
+  Parent: {fileID: 1642229588}
   Childs:
-  - {fileID: 4308204723369432212}
+  - {fileID: 1262582600}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &8969152571666006341 stripped
@@ -5294,6 +5440,14 @@ PrefabInstance:
     - target: {fileID: 674483922715310827, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
       propertyPath: m_Name
       value: link_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 674483922715310827, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162750348384975795, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7872235164054490281, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
       propertyPath: m_RootOrder
@@ -5348,7 +5502,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 674483922715310827, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
   m_PrefabInstance: {fileID: 4308204722906593388}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723237036284
+--- !u!114 &1049003888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5362,9 +5516,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 6266228309635331269}
-  Parent: {fileID: 4308204722739111378}
+  Parent: {fileID: 220438201}
   Childs:
-  - {fileID: 4308204723052048283}
+  - {fileID: 1268884408}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &6266228309635331269 stripped
@@ -5410,7 +5564,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 620ccad4da9610f49a155527a3f4394a, type: 2}
---- !u!114 &4308204723052048283
+--- !u!114 &1268884408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5424,7 +5578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 7125417200903048267}
-  Parent: {fileID: 4308204723237036284}
+  Parent: {fileID: 1049003888}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5479,9 +5633,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3814358171431865870, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9044297095329087854, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
       propertyPath: m_Name
       value: link_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9044297095329087854, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4425158306590062246, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
@@ -5520,7 +5682,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 45f9001e5bd643d4bac200e518d01a14, type: 2}
---- !u!114 &4308204723093228611
+--- !u!114 &477466541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5534,7 +5696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 1349864166878808358}
-  Parent: {fileID: 4308204722973371127}
+  Parent: {fileID: 1103118724}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5553,7 +5715,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9044297095329087854, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
   m_PrefabInstance: {fileID: 4308204723549974050}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722973371127
+--- !u!114 &1103118724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5567,9 +5729,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2597132527658736533}
-  Parent: {fileID: 4308204723637780354}
+  Parent: {fileID: 1774546687}
   Childs:
-  - {fileID: 4308204723093228611}
+  - {fileID: 477466541}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1001 &4308204723569692379
@@ -5582,6 +5744,10 @@ PrefabInstance:
     - target: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
       propertyPath: m_Name
       value: link_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2171327212141772556, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
       propertyPath: m_RootOrder
@@ -5627,6 +5793,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8894707377153158129, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3286320634734604088, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
     - {fileID: 7093877100436169023, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
@@ -5646,7 +5816,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
   m_PrefabInstance: {fileID: 4308204723569692379}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723259036657
+--- !u!114 &1425359680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5660,9 +5830,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2732501653060153815}
-  Parent: {fileID: 4308204723813139815}
+  Parent: {fileID: 1863478249}
   Childs:
-  - {fileID: 4308204724313533713}
+  - {fileID: 1085059653}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4663908858442982698 stripped
@@ -5698,7 +5868,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: eaef332f5c3a8644b9f2dcc87cba9dd8, type: 2}
---- !u!114 &4308204724313533713
+--- !u!114 &1085059653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5712,7 +5882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 716988669134284468}
-  Parent: {fileID: 4308204723259036657}
+  Parent: {fileID: 1425359680}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5730,6 +5900,10 @@ PrefabInstance:
     - target: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
       propertyPath: m_Name
       value: link_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5480449913427140720, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
       propertyPath: m_RootOrder
@@ -5775,6 +5949,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7888892355814323782, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
 --- !u!1 &2034468342306619171 stripped
@@ -5782,7 +5960,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2878419682624140624, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
   m_PrefabInstance: {fileID: 4308204723581438579}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723251589309
+--- !u!114 &740949144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5796,9 +5974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8631053535479228931}
-  Parent: {fileID: 4308204722863686553}
+  Parent: {fileID: 853007767}
   Childs:
-  - {fileID: 4308204724391532283}
+  - {fileID: 1266398588}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &6247381716212661301 stripped
@@ -5806,7 +5984,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7888892355814323782, guid: 0b9c28abd20b7ad4095f6262f6d92dec, type: 3}
   m_PrefabInstance: {fileID: 4308204723581438579}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204724391532283
+--- !u!114 &1266398588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5820,7 +5998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8044077079106701835}
-  Parent: {fileID: 4308204723251589309}
+  Parent: {fileID: 740949144}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5844,6 +6022,14 @@ PrefabInstance:
     - target: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
       propertyPath: m_Name
       value: link_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804558034694974805, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4889352346913217030, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
       propertyPath: m_RootOrder
@@ -5900,7 +6086,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
   m_PrefabInstance: {fileID: 4308204723677718452}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722390797756
+--- !u!114 &1424731437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5914,9 +6100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8652445483945721266}
-  Parent: {fileID: 4308204724062719307}
+  Parent: {fileID: 1878752815}
   Childs:
-  - {fileID: 4308204723378858473}
+  - {fileID: 392435329}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &2017014507158361281 stripped
@@ -5934,7 +6120,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4804558034694974805, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
   m_PrefabInstance: {fileID: 4308204723677718452}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723378858473
+--- !u!114 &392435329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5948,7 +6134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2017014507158361281}
-  Parent: {fileID: 4308204722390797756}
+  Parent: {fileID: 1424731437}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -5962,6 +6148,10 @@ PrefabInstance:
     - target: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
       propertyPath: m_Name
       value: link_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2171327212141772556, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
       propertyPath: m_RootOrder
@@ -6011,6 +6201,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 648e792866cf52c4691cd2841d178337, type: 2}
+    - target: {fileID: 8894707377153158129, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
 --- !u!4 &716988669067515347 stripped
@@ -6028,7 +6222,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 316283826465962044, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
   m_PrefabInstance: {fileID: 4308204723771375036}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722804666950
+--- !u!114 &1861174351
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6042,9 +6236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2732501653261648560}
-  Parent: {fileID: 4308204723312174231}
+  Parent: {fileID: 1454227004}
   Childs:
-  - {fileID: 4308204722588264386}
+  - {fileID: 1939081938}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1 &4663908858241996365 stripped
@@ -6052,7 +6246,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8894707377153158129, guid: 1091716de8b5c4d4aad47eb3b2e70c6e, type: 3}
   m_PrefabInstance: {fileID: 4308204723771375036}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722588264386
+--- !u!114 &1939081938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6066,7 +6260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 716988669067515347}
-  Parent: {fileID: 4308204722804666950}
+  Parent: {fileID: 1861174351}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6081,6 +6275,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 648e792866cf52c4691cd2841d178337, type: 2}
+    - target: {fileID: 5149467371565868561, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6100798467269419985, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6129,6 +6327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7158887239948597074, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
 --- !u!4 &2620807811375855537 stripped
@@ -6141,7 +6343,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7158887239948597074, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
   m_PrefabInstance: {fileID: 4308204723815218678}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723837681878
+--- !u!114 &920647771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6155,9 +6357,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8026455495277354535}
-  Parent: {fileID: 4308204724384879193}
+  Parent: {fileID: 1949606369}
   Childs:
-  - {fileID: 4308204722585403674}
+  - {fileID: 1957687941}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &8026455495277354535 stripped
@@ -6170,7 +6372,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5149467371565868561, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
   m_PrefabInstance: {fileID: 4308204723815218678}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722585403674
+--- !u!114 &1957687941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6184,7 +6386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2620807811375855537}
-  Parent: {fileID: 4308204723837681878}
+  Parent: {fileID: 920647771}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6243,6 +6445,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_5
       objectReference: {fileID: 0}
+    - target: {fileID: 3747254627299647237, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253873433018512994, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5287994497278581917, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
     - {fileID: 6724162864282101393, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
@@ -6252,7 +6462,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3747254627299647237, guid: a131edd0e046a2244af488f274ad9f90, type: 3}
   m_PrefabInstance: {fileID: 4308204723971418331}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722413273893
+--- !u!114 &491083683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6266,9 +6476,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 3343432878615832743}
-  Parent: {fileID: 4308204723139570717}
+  Parent: {fileID: 1605895252}
   Childs:
-  - {fileID: 4308204722979426460}
+  - {fileID: 1554856299}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &3343432878615832743 stripped
@@ -6328,7 +6538,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2dde15a40673e7f41a6997065299bc5f, type: 2}
---- !u!114 &4308204722979426460
+--- !u!114 &1554856299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6342,7 +6552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 5149963109277234790}
-  Parent: {fileID: 4308204722413273893}
+  Parent: {fileID: 491083683}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6397,6 +6607,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3814358171431865870, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4425158306590062246, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6405,6 +6619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_4
       objectReference: {fileID: 0}
+    - target: {fileID: 9044297095329087854, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
 --- !u!1 &1091704901098236172 stripped
@@ -6412,7 +6630,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3814358171431865870, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
   m_PrefabInstance: {fileID: 4308204724035610370}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722684240604
+--- !u!114 &1195750211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6426,7 +6644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 1349864167464583174}
-  Parent: {fileID: 4308204723233793537}
+  Parent: {fileID: 1489024261}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6445,7 +6663,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9044297095329087854, guid: b2b8300cf85a9b94c915b3a973e39976, type: 3}
   m_PrefabInstance: {fileID: 4308204724035610370}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723233793537
+--- !u!114 &1489024261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6459,9 +6677,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2597132528244511413}
-  Parent: {fileID: 4308204722399515998}
+  Parent: {fileID: 1459608156}
   Childs:
-  - {fileID: 4308204722684240604}
+  - {fileID: 1195750211}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!1001 &4308204724110972495
@@ -6471,6 +6689,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4308204724482321265}
     m_Modifications:
+    - target: {fileID: 5149467371565868561, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6100798467269419985, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6519,6 +6741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7158887239948597074, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3020349568948175014, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
     - {fileID: 4081697952841066178, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
@@ -6533,7 +6759,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7158887239948597074, guid: 3c84992f037e1954180e227a663ec3be, type: 3}
   m_PrefabInstance: {fileID: 4308204724110972495}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204723940450325
+--- !u!114 &38366741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6547,9 +6773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8026455494440531358}
-  Parent: {fileID: 4308204724482321271}
+  Parent: {fileID: 1403129299}
   Childs:
-  - {fileID: 4308204722943827419}
+  - {fileID: 1260212758}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &8026455494440531358 stripped
@@ -6590,7 +6816,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d18f83111eff38a48846d150e035ba8d, type: 2}
---- !u!114 &4308204722943827419
+--- !u!114 &1260212758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6604,7 +6830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2620807811470285832}
-  Parent: {fileID: 4308204723940450325}
+  Parent: {fileID: 38366741}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6619,10 +6845,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_0
       objectReference: {fileID: 0}
+    - target: {fileID: 674483922715310827, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 765732845670963336, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e8a22af4a828daf4ea375ee9d48dda3d, type: 2}
+    - target: {fileID: 6162750348384975795, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7872235164054490281, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6674,7 +6908,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 674483922715310827, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
   m_PrefabInstance: {fileID: 4308204724157295406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722917103817
+--- !u!114 &870893384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6688,9 +6922,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 6266228310599051143}
-  Parent: {fileID: 4308204724028302764}
+  Parent: {fileID: 668108932}
   Childs:
-  - {fileID: 4308204722626331398}
+  - {fileID: 1339674653}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &6266228310599051143 stripped
@@ -6708,7 +6942,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6162750348384975795, guid: 5b082fda3732b2347ac40f6c67744ffb, type: 3}
   m_PrefabInstance: {fileID: 4308204724157295406}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204722626331398
+--- !u!114 &1339674653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6722,7 +6956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 7125417202169618185}
-  Parent: {fileID: 4308204722917103817}
+  Parent: {fileID: 870893384}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6781,6 +7015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: link_7
       objectReference: {fileID: 0}
+    - target: {fileID: 6670376934349001261, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009197708710115746, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8041891185644923788, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
     - {fileID: 2150148181836109456, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
@@ -6809,7 +7051,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 03d844f02387de54d9267b6222730e4b, type: 2}
---- !u!114 &4308204722602816818
+--- !u!114 &1687719980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6823,7 +7065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8969152571050064915}
-  Parent: {fileID: 4308204724385553140}
+  Parent: {fileID: 1626656460}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
@@ -6832,7 +7074,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6670376934349001261, guid: 1bef8e92b2172204b906d47d2739233c, type: 3}
   m_PrefabInstance: {fileID: 4308204724464697677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204724385553140
+--- !u!114 &1626656460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6846,9 +7088,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 827939945101850435}
-  Parent: {fileID: 4308204723725827463}
+  Parent: {fileID: 312386924}
   Childs:
-  - {fileID: 4308204722602816818}
+  - {fileID: 1687719980}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &8969152571050064915 stripped
@@ -6866,6 +7108,14 @@ PrefabInstance:
     - target: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
       propertyPath: m_Name
       value: link_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804558034694974805, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4889352346913217030, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
       propertyPath: m_RootOrder
@@ -6920,7 +7170,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3459095672018863343, guid: 3c05fcc614097d14ab20aab163390bd3, type: 3}
   m_PrefabInstance: {fileID: 4308204724492125408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4308204724508175990
+--- !u!114 &690894832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6934,9 +7184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 8652445483131690726}
-  Parent: {fileID: 4308204724182229872}
+  Parent: {fileID: 495984329}
   Childs:
-  - {fileID: 4308204723645008552}
+  - {fileID: 547703859}
   Joint: {fileID: 0}
   Objectives: []
 --- !u!4 &2017014506328225685 stripped
@@ -6982,7 +7232,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 50586edb012e8fb46ab7d3d0d14ea4b8, type: 2}
---- !u!114 &4308204723645008552
+--- !u!114 &547703859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6996,7 +7246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 4308204723184353245}
   Transform: {fileID: 2017014506328225685}
-  Parent: {fileID: 4308204724508175990}
+  Parent: {fileID: 690894832}
   Childs: []
   Joint: {fileID: 0}
   Objectives: []
