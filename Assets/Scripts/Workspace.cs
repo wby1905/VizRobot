@@ -17,12 +17,12 @@ public class Workspace : MonoBehaviour
     {
         // the first is base, the last is end effector (no rotation)
         joints = robot.GetComponentsInChildren<ArticulationBody>().ToList();
-        // sampledPoints = sampling();
-        sampledPoints = new List<Angle[]>();
+        sampledPoints = sampling();
+        // sampledPoints = new List<Angle[]>();
         // sampledPoints.Add(new Angle[] { 0, 0, 0, 0, 0, 0, 0, 0 });
         // sampledPoints.Add(new Angle[] { 0, 90, 0, 0, 0, 0, 0, 0 });
         // sampledPoints.Add(new Angle[] { 0, 0, 90, 0, 90, 0, 0, 0 });
-        sampledPoints.Add(new Angle[] { 0, 4.2f, -11, 1.168f, -55, 0.35f, 18.9f, 0, 0 });
+        // sampledPoints.Add(new Angle[] { 0, 4.2f, -11, 1.168f, -55, 0.35f, 18.9f, 0, 0 });
 
         Debug.Log(sampledPoints.Count);
 
@@ -58,6 +58,11 @@ public class Workspace : MonoBehaviour
             GameObject tmp = Instantiate(pointPrefab, eePos, Quaternion.identity, p.transform);
 
         }
+    }
+
+    public void ToggleWorkspace()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
     }
 
 }

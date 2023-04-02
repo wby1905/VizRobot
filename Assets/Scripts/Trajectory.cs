@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Trajectory : MonoBehaviour
 {
-    public List<Vector3> targets = new List<Vector3>();
+    public List<Vector3> sampledPoints = new List<Vector3>();
 
     public GameObject robot;
     public List<ArticulationBody> joints = new List<ArticulationBody>();
@@ -18,22 +18,23 @@ public class Trajectory : MonoBehaviour
 
 
     private bool isMoving;
-    private int curTarget;
+    private Vector3 prevTarget, curTarget;
     private float curLerp;
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = false;
-        curTarget = 0;
         curLerp = 0;
-        targets.Insert(0, Vector3.zero);
 
         joints = robot.GetComponentsInChildren<ArticulationBody>().ToList();
         angles = new Angle[joints.Count];
         initLocalPositions = new Vector3[joints.Count];
         initLocalRotations = new Quaternion[joints.Count];
-        for (int i = 0; i < joints.Count; i++)
+
+        initLocalPositions[0] = joints[0].transform.position;
+        initLocalRotations[0] = joints[0].transform.rotation;
+        for (int i = 1; i < joints.Count; i++)
         {
             angles[i] = joints[i].xDrive.target;
             initLocalPositions[i] = joints[i].transform.localPosition;
@@ -51,17 +52,14 @@ public class Trajectory : MonoBehaviour
             if (curLerp >= 1)
             {
                 curLerp = 0;
-                curTarget++;
-                if (curTarget >= targets.Count)
-                {
-                    isMoving = false;
-                    targetPoint.gameObject.SetActive(false);
-                }
+                prevTarget = curTarget;
+                curTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
+                Debug.Log("New target: " + curTarget);
             }
             else if (hasReached)
             {
                 curLerp += Time.deltaTime;
-                targetPoint.position = Vector3.Lerp(targets[curTarget - 1], targets[curTarget], curLerp);
+                targetPoint.localPosition = Vector3.Lerp(prevTarget, curTarget, curLerp);
             }
             else
             {
@@ -69,8 +67,6 @@ public class Trajectory : MonoBehaviour
 
                 for (int i = joints.Count - 1; i > 0; i--)
                 {
-                    // joints[i].transform.localRotation = initLocalRotations[i] * Quaternion.AngleAxis(-angles[i].value, Vector3.up);
-
                     var drive = joints[i].xDrive;
                     drive.target = angles[i].value;
                     joints[i].xDrive = drive;
@@ -82,19 +78,38 @@ public class Trajectory : MonoBehaviour
 
     }
 
-    public void visualizeTrajectory()
+    public void StartRobot()
     {
-        if (isMoving || targets.Count < 2 || targetPoint == null)
+        if (isMoving || sampledPoints.Count < 2 || targetPoint == null)
         {
             return;
         }
-
         isMoving = true;
         targetPoint.gameObject.SetActive(true);
-        targets[0] = targetPoint.position;
-        targetPoint.position = targets[0];
-        curTarget = 1;
-        curLerp = 0;
+        targetPoint.position = endEffector.position;
+        curTarget = targetPoint.localPosition;
+        prevTarget = curTarget;
+        curLerp = 1;
 
+        // Make sure the movement is deterministic
+        Random.InitState(0);
+    }
+
+    public void StopRobot()
+    {
+        isMoving = false;
+        targetPoint.gameObject.SetActive(false);
+        ResetRobot();
+    }
+
+    public void ResetRobot()
+    {
+        for (int i = 0; i < joints.Count; i++)
+        {
+            var drive = joints[i].xDrive;
+            drive.target = 0;
+            joints[i].xDrive = drive;
+        }
+        angles = new Angle[joints.Count];
     }
 }

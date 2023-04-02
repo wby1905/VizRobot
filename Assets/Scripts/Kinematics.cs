@@ -102,11 +102,14 @@ public class Kinematics
     {
         var initLocalPositions = new Vector3[joints.Count];
         var initLocalRotations = new Quaternion[joints.Count];
-        for (int i = 0; i < joints.Count; i++)
+        for (int i = 1; i < joints.Count; i++)
         {
             initLocalPositions[i] = joints[i].transform.localPosition;
             initLocalRotations[i] = joints[i].transform.localRotation;
         }
+
+        initLocalPositions[0] = joints[0].transform.position;
+        initLocalRotations[0] = joints[0].transform.rotation;
 
         return ForwardKinematics(initLocalPositions, initLocalRotations, point);
 
