@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollisionPrediction : MonoBehaviour
@@ -18,13 +15,27 @@ public class CollisionPrediction : MonoBehaviour
         entered = false;
     }
 
+    void Update()
+    {
+        var t = Statistics.Instance.GetCurrentTask();
+        if (t == null || t.isVizEnabled)
+        {
+            m_collider.enabled = true;
+            alarm.enabled = true;
+        }
+        else
+        {
+            m_collider.enabled = false;
+            alarm.enabled = false;
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (1 << other.gameObject.layer == layerMask.value)
         {
             if (!entered)
                 alarm.Play();
-            entered = true;
         }
     }
 

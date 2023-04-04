@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UI;
 using TMPro;
-using TreeEditor;
 using UnityEngine;
 
 public class ObjectAlignment : MonoBehaviour
@@ -27,6 +24,9 @@ public class ObjectAlignment : MonoBehaviour
 
     Statistics statistics;
 
+    private float waitTimer;
+    private Statistics.Task t;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,22 +40,41 @@ public class ObjectAlignment : MonoBehaviour
         curTask = -1;
         countdownText.transform.parent.gameObject.SetActive(false);
         statistics = Statistics.Instance;
+
+        waitTimer = -1000;
     }
 
     void FixedUpdate()
     {
+
+
         if (curTask >= 0)
         {
-
+            if (waitTimer > 0)
+            {
+                waitTimer -= Time.deltaTime;
+                countdownText.text = waitTimer.ToString("0.0") + "s";
+                return;
+            }
+            else if (waitTimer != -1000)
+            {
+                startPos = objects[curTask].transform.position;
+                startRot = objects[curTask].transform.rotation;
+                timer = timeLimit;
+                tasks[curTask].SetActive(true);
+                trajectory.StartRobot();
+                statistics.NewTask(t.index, !t.isVizEnabled);
+                waitTimer = -1000;
+            }
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
-                countdownText.text = ((int)timer).ToString() + "s";
+                countdownText.text = timer.ToString("0.0") + "s";
             }
             else
             {
                 timer = 0;
-                Statistics.Task t = statistics.GetCurrentTask();
+                t = statistics.GetCurrentTask();
                 SetScore(t);
 
                 // Reset
@@ -66,11 +85,9 @@ public class ObjectAlignment : MonoBehaviour
                 curTask++;
                 if (curTask < objects.Length)
                 {
-                    startPos = objects[curTask].transform.position;
-                    startRot = objects[curTask].transform.rotation;
-                    timer = timeLimit;
-                    tasks[curTask].SetActive(true);
-                    statistics.NewTask(t.index, !t.isVizEnabled);
+                    statistics.StopTask();
+                    trajectory.StopRobot();
+                    waitTimer = 5;
                 }
                 else
                 {
@@ -92,11 +109,13 @@ public class ObjectAlignment : MonoBehaviour
         startPos = objects[curTask].transform.position;
         startRot = objects[curTask].transform.rotation;
 
-        int count = statistics.GetTaskCount();
+        int count = statistics.GetTaskCount() / objects.Length;
         if (count % 2 == 0)
-            statistics.NewTask(count / objects.Length, true);
+            statistics.NewTask(count, true);
         else
-            statistics.NewTask(count / objects.Length, false);
+            statistics.NewTask(count, false);
+
+
 
         countdownText.transform.parent.gameObject.SetActive(true);
         toggle.enabled = false;

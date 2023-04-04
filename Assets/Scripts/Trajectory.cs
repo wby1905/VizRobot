@@ -16,9 +16,11 @@ public class Trajectory : MonoBehaviour
     public Transform targetPoint;
     public Transform endEffector;
 
+    public VizTrajectory trail;
+
 
     private bool isMoving;
-    private Vector3 prevTarget, curTarget;
+    private Vector3 prevTarget, curTarget, nextTarget;
     private float curLerp;
 
     // Start is called before the first frame update
@@ -53,8 +55,10 @@ public class Trajectory : MonoBehaviour
             {
                 curLerp = 0;
                 prevTarget = curTarget;
-                curTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
-                Debug.Log("New target: " + curTarget);
+                curTarget = nextTarget;
+                nextTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
+                if (trail.gameObject.activeInHierarchy)
+                    trail.NextViz(nextTarget);
             }
             else if (hasReached)
             {
@@ -91,14 +95,19 @@ public class Trajectory : MonoBehaviour
         prevTarget = curTarget;
         curLerp = 1;
 
+        if (trail.gameObject.activeInHierarchy)
+            trail.AlignRobot(joints);
+
         // Make sure the movement is deterministic
         Random.InitState(0);
+        nextTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
     }
 
     public void StopRobot()
     {
         isMoving = false;
         targetPoint.gameObject.SetActive(false);
+        trail.ResetViz();
         ResetRobot();
     }
 
