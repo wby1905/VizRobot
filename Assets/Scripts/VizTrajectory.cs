@@ -23,7 +23,7 @@ public class VizTrajectory : MonoBehaviour
     private Angle[] angles;
     private Vector3[] initLocalPositions;
     private Quaternion[] initLocalRotations;
-    private System.Random rand = new System.Random(0);
+    public System.Random rand = new System.Random(0);
     private float percentile = 0.2f;
     private float curPercentile = 0.2f;
 
@@ -88,7 +88,7 @@ public class VizTrajectory : MonoBehaviour
             }
             else if (reached)
             {
-                curLerp += 2 * Time.deltaTime;
+                curLerp += 4 * Time.deltaTime;
                 vizTargetPoint.localPosition = Vector3.Lerp(prevTarget, targets.Peek(), curLerp);
                 if (curLerp >= curPercentile)
                 {

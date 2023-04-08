@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.MixedReality.Toolkit.UI;
 using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class ObjectAlignment : MonoBehaviour
@@ -16,8 +18,8 @@ public class ObjectAlignment : MonoBehaviour
     private GameObject[] objects;
     private GameObject[] targets;
 
-    private Vector3 startPos;
-    private Quaternion startRot;
+    private Vector3[] startPos;
+    private Quaternion[] startRot;
 
     private float timer;
     public float timeLimit;
@@ -32,6 +34,7 @@ public class ObjectAlignment : MonoBehaviour
     {
         objects = new GameObject[tasks.Length];
         targets = new GameObject[tasks.Length];
+
         for (int i = 0; i < tasks.Length; i++)
         {
             targets[i] = tasks[i].transform.GetChild(0).gameObject;
@@ -44,7 +47,7 @@ public class ObjectAlignment : MonoBehaviour
         waitTimer = -1000;
     }
 
-    void FixedUpdate()
+    void Update()
     {
 
 
@@ -58,8 +61,15 @@ public class ObjectAlignment : MonoBehaviour
             }
             else if (waitTimer != -1000)
             {
-                startPos = objects[curTask].transform.position;
-                startRot = objects[curTask].transform.rotation;
+                startPos = new Vector3[objects[curTask].transform.childCount];
+                startRot = new Quaternion[objects[curTask].transform.childCount];
+                for (int i = 0; i < objects[curTask].transform.childCount; i++)
+                {
+                    var child = objects[curTask].transform.GetChild(i);
+                    startPos[i] = child.position;
+                    startRot[i] = child.rotation;
+                }
+
                 timer = timeLimit;
                 tasks[curTask].SetActive(true);
                 trajectory.StartRobot();
@@ -79,8 +89,13 @@ public class ObjectAlignment : MonoBehaviour
 
                 // Reset
                 tasks[curTask].SetActive(false);
-                objects[curTask].transform.position = startPos;
-                objects[curTask].transform.rotation = startRot;
+                for (int i = 0; i < objects[curTask].transform.childCount; i++)
+                {
+                    var child = objects[curTask].transform.GetChild(i);
+                    child.position = startPos[i];
+                    child.rotation = startRot[i];
+                }
+
 
                 curTask++;
                 if (curTask < objects.Length)
@@ -106,15 +121,20 @@ public class ObjectAlignment : MonoBehaviour
         curTask = 0;
         timer = timeLimit;
         tasks[curTask].SetActive(true);
-        startPos = objects[curTask].transform.position;
-        startRot = objects[curTask].transform.rotation;
+        startPos = new Vector3[objects[curTask].transform.childCount];
+        startRot = new Quaternion[objects[curTask].transform.childCount];
 
+        for (int i = 0; i < objects[curTask].transform.childCount; i++)
+        {
+            var child = objects[curTask].transform.GetChild(i);
+            startPos[i] = child.position;
+            startRot[i] = child.rotation;
+        }
         int count = statistics.GetTaskCount() / objects.Length;
         if (count % 2 == 0)
             statistics.NewTask(count, true);
         else
             statistics.NewTask(count, false);
-
 
 
         countdownText.transform.parent.gameObject.SetActive(true);
@@ -126,10 +146,33 @@ public class ObjectAlignment : MonoBehaviour
 
     void SetScore(Statistics.Task t)
     {
-        float dis = Vector3.Distance(objects[curTask].transform.position, targets[curTask].transform.position);
-        float rot = Quaternion.Angle(objects[curTask].transform.rotation, targets[curTask].transform.rotation);
-        t.positionDiff = dis;
-        t.angleDiff = rot;
+        float loss = 0;
+        HashSet<int> used = new HashSet<int>();
+        for (int i = 0; i < objects[curTask].transform.childCount; i++)
+        {
+            var child = objects[curTask].transform.GetChild(i);
+            float minLoss = 1000;
+            int minIndex = -1;
+            for (int j = 0; j < targets[curTask].transform.childCount; j++)
+            {
+                var target = targets[curTask].transform.GetChild(j);
+                float l = 1 - Vector3.Dot((-child.forward).normalized, target.up.normalized);
+                // object point to target line's distance
+                var p = child.position - target.position;
+                var d = Vector3.Project(p, target.up);
+                l += Mathf.Sqrt(p.sqrMagnitude - d.sqrMagnitude);
+                if (l < minLoss && !used.Contains(j))
+                {
+                    minLoss = l;
+                    minIndex = j;
+                }
+            }
+            loss += minLoss;
+            used.Add(minIndex);
+            Debug.Log("Object " + i + " to target " + minIndex + " loss: " + minLoss);
+        }
+
+        t.loss = loss;
     }
 
 

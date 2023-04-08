@@ -11,18 +11,16 @@ public class Statistics : MonoBehaviour
     {
         public int index;
         public bool isVizEnabled;
-        public float avgCompletionTime;
-        public float positionDiff;
-        public float angleDiff;
+        // public float avgCompletionTime;
+        public float loss;
         public int collisionCount;
 
         public override string ToString()
         {
             return this.index + " " +
             this.isVizEnabled + " " +
-            MathF.Round(this.avgCompletionTime, 2) + " " +
-            MathF.Round(this.positionDiff, 2) + " " +
-            MathF.Round(this.angleDiff, 2) + " " +
+            // MathF.Round(this.avgCompletionTime, 2) + " " +
+            MathF.Round(this.loss, 2) + " " +
             this.collisionCount;
         }
     }
@@ -81,7 +79,7 @@ public class Statistics : MonoBehaviour
 
     public string SerializeAllTasks()
     {
-        string s = "Index VizEnabled AvgCompletionTime PositionDiff AngleDiff CollisionCount";
+        string s = "Index VizEnabled Loss CollisionCount";
         foreach (Task t in tasks)
         {
             s += "\n" + t.ToString();

@@ -61,14 +61,13 @@ public class Trajectory : MonoBehaviour
             {
                 curLerp = 0;
                 prevTarget = curTarget;
-                curTarget = nextTarget;
-                nextTarget = sampledPoints[rand.Next(sampledPoints.Count)];
+                curTarget = sampledPoints[rand.Next(sampledPoints.Count)];
                 if (trail.gameObject.activeInHierarchy)
                     trail.PopViz();
             }
             else if (hasReached)
             {
-                curLerp += Time.deltaTime;
+                curLerp += 2 * Time.deltaTime;
                 targetPoint.localPosition = Vector3.Lerp(prevTarget, curTarget, curLerp);
             }
             else
@@ -97,13 +96,18 @@ public class Trajectory : MonoBehaviour
         isMoving = true;
         targetPoint.gameObject.SetActive(true);
         targetPoint.position = endEffector.position;
-        curTarget = targetPoint.localPosition;
-        prevTarget = curTarget;
-        nextTarget = curTarget;
+        prevTarget = targetPoint.localPosition;
+        curTarget = sampledPoints[rand.Next(sampledPoints.Count)];
+
         curLerp = 0;
 
         if (trail.gameObject.activeInHierarchy)
+        {
             trail.AlignRobot(joints);
+            trail.rand = new System.Random(0);
+        }
+
+        rand = new System.Random(0);
 
         trail.StartViz();
     }
