@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using RosMessageTypes.Std;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,6 +11,7 @@ public class VizTrajectory : MonoBehaviour
     public GameObject vizRobot;
     public Transform vizEndEffector;
     public Transform vizTargetPoint;
+    public Trajectory traj;
 
     private float curLerp;
     private Vector3 prevTarget;
@@ -21,6 +23,10 @@ public class VizTrajectory : MonoBehaviour
     private Angle[] angles;
     private Vector3[] initLocalPositions;
     private Quaternion[] initLocalRotations;
+    private System.Random rand = new System.Random(0);
+    private float percentile = 0.2f;
+    private float curPercentile = 0.2f;
+
 
     void Awake()
     {
@@ -57,35 +63,36 @@ public class VizTrajectory : MonoBehaviour
 
     void OnEnable()
     {
-        
+
     }
 
     void OnDisable()
     {
-        Debug.Log("OnDisable");
         ResetViz();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targets.Count > 0)
+        if (targets.Count > 0 && tmpRobots.Count < 3)
         {
             bool reached = vizTargetPoint.GetComponent<Collider>().bounds.Contains(vizEndEffector.position);
 
             if (curLerp >= 1)
             {
+                curPercentile = percentile;
                 curLerp = 0;
                 prevTarget = targets.Dequeue();
-                PopViz();
                 tmpRobots.Enqueue(new List<GameObject>());
+                NextViz(traj.sampledPoints[rand.Next(traj.sampledPoints.Count)]);
             }
             else if (reached)
             {
-                curLerp += 5 * Time.deltaTime;
+                curLerp += 2 * Time.deltaTime;
                 vizTargetPoint.localPosition = Vector3.Lerp(prevTarget, targets.Peek(), curLerp);
-                if ((int)(curLerp / Time.deltaTime) % 10 == 0)
+                if (curLerp >= curPercentile)
                 {
+                    curPercentile += percentile;
                     renderTrail();
                 }
             }
@@ -117,7 +124,12 @@ public class VizTrajectory : MonoBehaviour
         }
 
         targets.Enqueue(target);
+    }
 
+    public void StartViz()
+    {
+        ResetViz();
+        NextViz(traj.sampledPoints[rand.Next(traj.sampledPoints.Count)]);
     }
 
     public void PopViz()
@@ -130,6 +142,12 @@ public class VizTrajectory : MonoBehaviour
         foreach (var trajectory in tmp)
         {
             Destroy(trajectory);
+        }
+
+        var first = tmpRobots.Peek();
+        foreach (var tmpRobot in first)
+        {
+            tmpRobot.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, 0.1f);
         }
     }
 

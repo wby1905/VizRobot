@@ -21,6 +21,7 @@ public class Trajectory : MonoBehaviour
 
     private bool isMoving;
     private Vector3 prevTarget, curTarget, nextTarget;
+    private System.Random rand = new System.Random(0);
     private float curLerp;
 
     // Start is called before the first frame update
@@ -43,6 +44,11 @@ public class Trajectory : MonoBehaviour
             initLocalRotations[i] = joints[i].transform.localRotation;
         }
 
+        for (int i = 0; i < sampledPoints.Count; i++)
+        {
+            sampledPoints[i] += new Vector3(0, 0.15f, 0);
+        }
+
     }
 
 
@@ -56,9 +62,9 @@ public class Trajectory : MonoBehaviour
                 curLerp = 0;
                 prevTarget = curTarget;
                 curTarget = nextTarget;
-                nextTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
+                nextTarget = sampledPoints[rand.Next(sampledPoints.Count)];
                 if (trail.gameObject.activeInHierarchy)
-                    trail.NextViz(nextTarget);
+                    trail.PopViz();
             }
             else if (hasReached)
             {
@@ -93,22 +99,21 @@ public class Trajectory : MonoBehaviour
         targetPoint.position = endEffector.position;
         curTarget = targetPoint.localPosition;
         prevTarget = curTarget;
-        curLerp = 1;
+        nextTarget = curTarget;
+        curLerp = 0;
 
         if (trail.gameObject.activeInHierarchy)
             trail.AlignRobot(joints);
 
-        // Make sure the movement is deterministic
-        Random.InitState(0);
-        nextTarget = sampledPoints[Random.Range(0, sampledPoints.Count)];
+        trail.StartViz();
     }
 
     public void StopRobot()
     {
         isMoving = false;
         targetPoint.gameObject.SetActive(false);
-        trail.ResetViz();
         ResetRobot();
+        trail.ResetViz();
     }
 
     public void ResetRobot()

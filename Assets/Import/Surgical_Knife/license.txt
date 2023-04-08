@@ -1,0 +1,11 @@
+Model Information:
+* title:	Surgical Knife
+* source:	https://sketchfab.com/3d-models/surgical-knife-b435ebe4ea684b75b73008d497a4b082
+* author:	GulzarMrRobotics (https://sketchfab.com/GulzarAhmed)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Surgical Knife" (https://sketchfab.com/3d-models/surgical-knife-b435ebe4ea684b75b73008d497a4b082) by GulzarMrRobotics (https://sketchfab.com/GulzarAhmed) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

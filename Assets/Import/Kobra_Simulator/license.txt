@@ -1,0 +1,11 @@
+Model Information:
+* title:	Kobra Simulator
+* source:	https://sketchfab.com/3d-models/kobra-simulator-916c0bb607eb47d6aea7d9a076eb3ee4
+* author:	Universal Simulation (https://sketchfab.com/universal-simulation)
+
+Model License:
+* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Kobra Simulator" (https://sketchfab.com/3d-models/kobra-simulator-916c0bb607eb47d6aea7d9a076eb3ee4) by Universal Simulation (https://sketchfab.com/universal-simulation) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)

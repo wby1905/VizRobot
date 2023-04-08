@@ -1,0 +1,11 @@
+Model Information:
+* title:	Upper Body Anatomy
+* source:	https://sketchfab.com/3d-models/upper-body-anatomy-bd4aa30efaa0455eaf3b4d59e9fe9c65
+* author:	580000158 (https://sketchfab.com/580000158)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Upper Body Anatomy" (https://sketchfab.com/3d-models/upper-body-anatomy-bd4aa30efaa0455eaf3b4d59e9fe9c65) by 580000158 (https://sketchfab.com/580000158) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

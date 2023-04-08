@@ -1,0 +1,11 @@
+Model Information:
+* title:	drawer
+* source:	https://sketchfab.com/3d-models/drawer-7b7771f62d4643a0914b3a3121149d0e
+* author:	maxologies (https://sketchfab.com/maxologies)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "drawer" (https://sketchfab.com/3d-models/drawer-7b7771f62d4643a0914b3a3121149d0e) by maxologies (https://sketchfab.com/maxologies) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

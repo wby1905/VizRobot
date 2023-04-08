@@ -35,11 +35,11 @@ public class Workspace : MonoBehaviour
         List<Angle[]> points = new List<Angle[]>();
         for (float j1 = joints[1].xDrive.lowerLimit; j1 <= joints[1].xDrive.upperLimit; j1 += sampleStep)
             for (float j2 = joints[2].xDrive.lowerLimit; j2 <= joints[2].xDrive.upperLimit; j2 += sampleStep)
-                for (float j3 = joints[3].xDrive.lowerLimit; j3 <= joints[3].xDrive.upperLimit; j3 += sampleStep)
-                    for (float j4 = joints[4].xDrive.lowerLimit; j4 <= joints[4].xDrive.upperLimit; j4 += sampleStep)
-                    {
-                        points.Add(new Angle[] { new Angle(0), new Angle(j1), new Angle(j2), new Angle(j3), new Angle(j4), new Angle(0), new Angle(0), new Angle(0) });
-                    }
+            // for (float j3 = joints[3].xDrive.lowerLimit; j3 <= joints[3].xDrive.upperLimit; j3 += sampleStep)
+            // for (float j4 = joints[4].xDrive.lowerLimit; j4 <= joints[4].xDrive.upperLimit; j4 += sampleStep)
+            {
+                points.Add(new Angle[] { new Angle(0), new Angle(j1), new Angle(j2), new Angle(0), new Angle(0), new Angle(0), new Angle(0), new Angle(0) });
+            }
         return points;
     }
 

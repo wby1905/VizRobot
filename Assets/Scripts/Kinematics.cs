@@ -13,7 +13,8 @@ public class Kinematics
 
     private static float Loss(Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Vector3 target, Angle[] angles)
     {
-        return DistanceFromTarget(initLocalPosition, initLocalRotation, target, angles);
+        return DistanceFromTarget(initLocalPosition, initLocalRotation, target, angles)
+         + 0.1f * VerticalRestriction(initLocalPosition, initLocalRotation, angles);
     }
 
     private static float TorsionPenalty(Angle[] angles)
@@ -24,6 +25,21 @@ public class Kinematics
             penalty += Mathf.Abs(angles[i].value);
         }
         return penalty / angles.Length;
+    }
+
+    private static float VerticalRestriction(Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Angle[] point)
+    {
+        Vector3 curPosition = initLocalPosition[0];
+        Quaternion curRotation = initLocalRotation[0];
+
+        for (int i = 1; i < initLocalPosition.Length; i++)
+        {
+            curRotation = curRotation * initLocalRotation[i - 1];
+            curRotation = curRotation * Quaternion.AngleAxis(-point[i - 1].value, Vector3.up);
+
+            curPosition = curPosition + curRotation * initLocalPosition[i];
+        }
+        return Vector3.Dot(curRotation * Vector3.up, Vector3.up);
     }
 
     private static float DistanceFromTarget(Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Vector3 target, Angle[] angles)
