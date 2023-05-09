@@ -61,7 +61,12 @@ public class Trajectory : MonoBehaviour
             {
                 curLerp = 0;
                 prevTarget = curTarget;
-                curTarget = sampledPoints[rand.Next(sampledPoints.Count)];
+                int nextIdx = rand.Next(sampledPoints.Count);
+                while (nextIdx == sampledPoints.IndexOf(prevTarget))
+                {
+                    nextIdx = rand.Next(sampledPoints.Count);
+                }
+                curTarget = sampledPoints[nextIdx];
                 if (trail.gameObject.activeInHierarchy)
                     trail.PopViz();
             }
@@ -72,7 +77,7 @@ public class Trajectory : MonoBehaviour
             }
             else
             {
-                Kinematics.InverseKinematics(joints, initLocalPositions, initLocalRotations, targetPoint.position, angles);
+                Kinematics.InverseKinematics(joints, initLocalPositions, initLocalRotations, targetPoint.position, angles, 50);
 
                 for (int i = joints.Count - 1; i > 0; i--)
                 {
@@ -127,7 +132,11 @@ public class Trajectory : MonoBehaviour
             var drive = joints[i].xDrive;
             drive.target = 0;
             joints[i].xDrive = drive;
+            joints[i].transform.localPosition = initLocalPositions[i];
+            joints[i].transform.localRotation = initLocalRotations[i];
         }
+        joints[0].transform.position = initLocalPositions[0];
+        joints[0].transform.rotation = initLocalRotations[0];
         angles = new Angle[joints.Count];
     }
 }

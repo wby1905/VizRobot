@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 public class Kinematics
 {
     public const float SamplingDistance = 0.1f;
-    public const float LearningRate = 100f;
     public const float DistanceThreshold = 0.01f;
 
     private static float Loss(Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Vector3 target, Angle[] angles)
@@ -69,7 +68,7 @@ public class Kinematics
         return gradient;
     }
 
-    public static void InverseKinematics(List<ArticulationBody> joints, Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Vector3 target, Angle[] angles)
+    public static void InverseKinematics(List<ArticulationBody> joints, Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Vector3 target, Angle[] angles, float LearningRate)
     {
 
         if (DistanceFromTarget(initLocalPosition, initLocalRotation, target, angles) < DistanceThreshold)
@@ -100,7 +99,7 @@ public class Kinematics
     public static Vector3 ForwardKinematics(Vector3[] initLocalPosition, Quaternion[] initLocalRotation, Angle[] point)
     {
         Vector3 curPosition = initLocalPosition[0];
-        Quaternion curRotation = initLocalRotation[0];
+        Quaternion curRotation = Quaternion.identity;
 
         for (int i = 1; i < initLocalPosition.Length; i++)
         {
