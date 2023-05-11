@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5241779309641175689}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6638455655634360928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RootNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,11 +79,11 @@ GameObject:
   - component: {fileID: 8872371692616315787}
   - component: {fileID: 8872371692616315786}
   - component: {fileID: 8872371692616315785}
-  - component: {fileID: 8741313976348058803}
   - component: {fileID: 1523284204547166262}
-  m_Layer: 0
+  - component: {fileID: 1265473552347410608}
+  m_Layer: 9
   m_Name: Surgical_Knife
-  m_TagString: Untagged
+  m_TagString: Knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812038425500347548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.338, y: 0, z: -0.17}
+  m_LocalPosition: {x: -0.338, y: 0, z: -0.1938}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hostTransform: {fileID: 7754804355679614017}
-  manipulationType: 1
-  twoHandedManipulationType: 7
-  allowFarManipulation: 0
+  manipulationType: -1
+  twoHandedManipulationType: 3
+  allowFarManipulation: 1
   useForcesForNearManipulation: 0
   oneHandRotationModeNear: 1
   oneHandRotationModeFar: 1
@@ -193,20 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTetherWhenManipulating: 0
   IsBoundsHandles: 0
---- !u!136 &8741313976348058803
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812038425500347548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 5
-  m_Height: 27
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -9.478307}
 --- !u!54 &1523284204547166262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -223,6 +209,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1265473552347410608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812038425500347548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.13, y: 8.74, z: 23.1}
+  m_Center: {x: 0, y: 0, z: -9.478307}
 --- !u!1 &2296018773631370416
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 633026314459721942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +265,7 @@ GameObject:
   - component: {fileID: 8148969431916141021}
   - component: {fileID: 3721728006305750243}
   - component: {fileID: 1885489614679178197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_2_Blade_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +348,7 @@ GameObject:
   - component: {fileID: 3399819890461524176}
   - component: {fileID: 1913385401873258568}
   - component: {fileID: 2049774020892995246}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_Hand_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717626786441156776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955623236795840320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +495,7 @@ GameObject:
   - component: {fileID: 6964401486079237803}
   - component: {fileID: 4588332004122918653}
   - component: {fileID: 8046130121456037763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube_Hand_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -577,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5038364885684357639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sketchfab_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7309556928372233467}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Surgical Knife.fbx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

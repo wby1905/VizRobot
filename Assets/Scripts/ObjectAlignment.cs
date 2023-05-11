@@ -74,6 +74,8 @@ public class ObjectAlignment : MonoBehaviour
                 tasks[curTask].SetActive(true);
                 trajectory.StartRobot();
                 statistics.NewTask(t.index, !t.isVizEnabled);
+                // statistics.NewTask(t.index, true);
+
                 waitTimer = -1000;
             }
             if (timer > 0)
@@ -131,11 +133,11 @@ public class ObjectAlignment : MonoBehaviour
             startRot[i] = child.rotation;
         }
         int count = statistics.GetTaskCount() / objects.Length;
-        if (count % 2 == 0)
-            statistics.NewTask(count, true);
-        else
-            statistics.NewTask(count, false);
-
+        // if (count % 2 == 0)
+        //     statistics.NewTask(count, true);
+        // else
+        //     statistics.NewTask(count, false);
+        statistics.NewTask(count, true);
 
         countdownText.transform.parent.gameObject.SetActive(true);
         toggle.enabled = false;
@@ -156,11 +158,7 @@ public class ObjectAlignment : MonoBehaviour
             for (int j = 0; j < targets[curTask].transform.childCount; j++)
             {
                 var target = targets[curTask].transform.GetChild(j);
-                float l = 1 - Vector3.Dot((-child.forward).normalized, target.up.normalized);
-                // object point to target line's distance
-                var p = child.position - target.position;
-                var d = Vector3.Project(p, target.up);
-                l += Mathf.Sqrt(p.sqrMagnitude - d.sqrMagnitude);
+                float l = GetLoss(child, target);
                 if (l < minLoss && !used.Contains(j))
                 {
                     minLoss = l;
@@ -175,5 +173,13 @@ public class ObjectAlignment : MonoBehaviour
         t.loss = loss;
     }
 
-
+    public static float GetLoss(Transform knife, Transform target)
+    {
+        float l = 1 - Vector3.Dot((-knife.forward).normalized, target.up.normalized);
+        // object point to target line's distance
+        var p = knife.position - target.position;
+        var d = Vector3.Project(p, target.up);
+        l += Mathf.Sqrt(p.sqrMagnitude - d.sqrMagnitude);
+        return l;
+    }
 }

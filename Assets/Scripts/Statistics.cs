@@ -47,7 +47,6 @@ public class Statistics : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     public void NewTask(int idx, bool isVizEnabled)
     {
         if (currentTask != null)

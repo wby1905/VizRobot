@@ -109,7 +109,6 @@ public class Trajectory : MonoBehaviour
         if (trail.gameObject.activeInHierarchy)
         {
             trail.AlignRobot(joints);
-            trail.rand = new System.Random(0);
         }
 
         rand = new System.Random(0);
@@ -132,11 +131,7 @@ public class Trajectory : MonoBehaviour
             var drive = joints[i].xDrive;
             drive.target = 0;
             joints[i].xDrive = drive;
-            joints[i].transform.localPosition = initLocalPositions[i];
-            joints[i].transform.localRotation = initLocalRotations[i];
         }
-        joints[0].transform.position = initLocalPositions[0];
-        joints[0].transform.rotation = initLocalRotations[0];
         angles = new Angle[joints.Count];
     }
 }

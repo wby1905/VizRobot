@@ -77,13 +77,10 @@ public class VizTrajectory : MonoBehaviour
             var drive = joints[i].xDrive;
             drive.target = 0;
             joints[i].xDrive = drive;
-            joints[i].transform.localPosition = initLocalPositions[i];
-            joints[i].transform.localRotation = initLocalRotations[i];
         }
-        joints[0].transform.position = initLocalPositions[0];
-        joints[0].transform.rotation = initLocalRotations[0];
 
         isFirst = true;
+        curLerp = 0;
     }
 
 
@@ -185,6 +182,7 @@ public class VizTrajectory : MonoBehaviour
     public void StartViz()
     {
         ResetViz();
+        rand = new System.Random(0);
         NextViz(traj.sampledPoints[rand.Next(traj.sampledPoints.Count)]);
     }
     public void PopViz()
